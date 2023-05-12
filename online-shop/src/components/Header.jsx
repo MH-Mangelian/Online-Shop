@@ -28,8 +28,7 @@ const Header = () => {
     margin-left : auto;
     margin-right: auto;
     width: 95vw;
-    padding: 20px 5px
-    background-color: red;
+    padding: 20px 5px;
     @media (max-width: 768px) {
       top : 0px;
       
