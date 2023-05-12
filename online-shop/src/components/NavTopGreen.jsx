@@ -17,7 +17,7 @@ const NavTopGreen = () => {
     padding: 10px;
     top: 0; 
     @media (max-width: 768px) {
-      visibility: hidden;
+      display: none;
       
     }`}>
         {/* -------------------------Left side------------------------ */}

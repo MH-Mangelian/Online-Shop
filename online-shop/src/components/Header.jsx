@@ -2,15 +2,23 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { css ,jsx} from '@emotion/react';
-
+import { useState } from 'react';
 import Link from 'next/link';
+
 // icons import
 import {SiPicardsurgeles} from "react-icons/si";
-import {BsSearch} from "react-icons/bs";
-import {MdSupervisorAccount} from "react-icons/md";
+import {MdSupervisorAccount , MdClose} from "react-icons/md";
 import {BiCartAdd} from "react-icons/bi";
+import {RxHamburgerMenu} from "react-icons/rx";
+
+//components
+import Search from './Search';
+import TextMobileHeader from './TextMobileHeader';
+import SearchForMobile from './SearchForMobile';
+import TextHeader from './TextHeader';
 
 const Header = () => {
+  const [toggle, setToggle] = useState(false);
   return (
     <header css={css`
     display: flex;
@@ -75,23 +83,8 @@ const Header = () => {
           cursor: pointer;
           padding-right: 3px;
           `}>
-            <div css={css`
-            width:100px;`}>
-              <select name="Categories" id="1" css={css`
-              border: none;
-              color: black;
-              padding: 5px 10px;
-              margin-right:10px;
-              border-radius: 5%;
-              `}>
-                <option value="1">Categories</option>
-                <option value="2">1</option>
-                <option value="3">2</option>
-                <option value="4">3</option>
-                <option value="5">4</option>
-              </select>
-            </div>
-
+            
+          
             <div css={css`
               display: inline-flex;
               align-items: center;
@@ -100,55 +93,11 @@ const Header = () => {
               margin: 0 15px;
               color:black;
             `}>
-              <Link href="" css={css`
-              margin: 0 15px;
-              `}>
-                Home
-              </Link>
-
-              <Link href="" css={css`
-              margin: 0 15px;
-              `}>
-                AboutUs
-              </Link>
-
-              <Link href="" css={css`
-              margin: 0 15px;
-              `}>
-                ContactUs</Link>
-
-              {/* -------------Search------------- */}
-              <form css={css`
-              `}>
-                <input css={css`
-                  border: none;
-                  color: black;
-                  padding: 5px 20px;
-                  margin:0 10px;
-                  border-radius: 2%;
-                  width: 80%;
-                  background-color: hsl(0, 0%, 93%);`}
-                  type="search"
-                  placeholder='Search...'
-                />
-                <button css={css`
-                    float: left;
-                    width: 20%;
-                    padding: 1px;
-                    color: white;
-                    cursor: pointer;`
-                  }>
-                  <BsSearch css={css`
-                    display: inline-block;
-                    color: black;
-                    width: 15px;
-                    height: 15px;
-                    `}/>
-
-                </button>
-
-              </form>
+              {/* ---------------texts Mobile hiden --------------------- */}
+              <TextHeader/>
             </div>
+              {/* -------------Search------------- */}
+              <Search css={css`${toggle ? "display: none;" : "display: flex;"}`}/>
 
         </div>
       </div>
@@ -164,6 +113,10 @@ const Header = () => {
               &hover{
                 color: darkred;
               }
+              @media (max-width: 768px) {
+                display: none;
+                
+              }
             `}>
               <div css={css`
                 display: inline-flex;
@@ -171,19 +124,96 @@ const Header = () => {
                 cursor: pointer;
                 padding-right: 3px;`
               }>
-                <div>
-                  <MdSupervisorAccount/>
+                
+                <div css={css`
+                display:inline-flex;
+                margin: 0 10px;
+                padding:0 1px`}>
+                  <MdSupervisorAccount css={css`
+                    width: 20px;
+                    height: 20px;`}/>
+
                   <Link href="" css={css`
                   margin: 0 10px;
                   `}>account</Link>
                 </div>
-                <div>
-                  <BiCartAdd/>
+
+                <div css={css`
+                display:inline-flex;
+                margin: 0 10px;
+                padding:0 1px`}>
+                  <BiCartAdd css={css`
+                    width: 20px;
+                    height: 20px;`}/>
+
                   <Link href="" css={css`
                   margin: 0 10px;
                   `}>Cart</Link>
                 </div>
 
+              </div>
+            </div>
+
+            {/* ---------------------Hamburger menu------------------------- */}
+            <div css={css`
+              padding: 3px;
+              margin-left: 10px;
+              font-size: 15px;
+              border-radius: 4px;
+              color: black;
+              &hover{
+                color: darkred;
+              }
+              @media (min-width: 1024px) {
+                display: none;
+                
+              }
+            `}>
+
+              <div>
+                {toggle ? (
+                  <MdClose
+                  css={css`
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 10px;  
+                  `}
+                    onClick={() => setToggle(!toggle)}
+                  />
+                ) : (
+                  <RxHamburgerMenu
+                    css={css`
+                      width: 25px;
+                      height: 25px;
+                      margin-right: 10px;
+                      
+                    `}
+                    onClick={() => setToggle(!toggle)}
+                  />
+                )}
+              </div>
+
+              <div css={css`${toggle ? "display: flex;" : "display: none;"} 
+                  flex-direction: column;
+                  flex-wrap: nowrap;
+                  justify-content: space-evenly;
+                  align-items: center;
+                  background: #e8e8e8f8;
+                  padding: 20px;
+                  border-radius: 10px;
+                  position: absolute;
+                  min-height: 300px;
+                  min-width: 300px;
+                  left: 0;
+                  right: 0;
+                  top: 150px;
+                  
+              `}>
+                <SearchForMobile/>
+
+                <TextMobileHeader/>
+
+                
               </div>
             </div>
 
