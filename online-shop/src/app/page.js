@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import Navbar from '@/components/Navbar'
+import NavTopGreen from '@/components/NavTopGreen'
+import Header from '@/components/Header'
 //----------------------------------------------------------------
 
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Navbar/>
+    <main className="">
+      <NavTopGreen/>
+      <Header/>
     </main>
   )
 }
