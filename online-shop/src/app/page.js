@@ -1,7 +1,7 @@
 import NavTopGreen from '@/components/NavTopGreen'
 import Header from '@/components/Header'
 import Banner from '@/components/banner'
-import Product from '@/components/product/Product'
+import Product from '@/components/products/Product'
 //----------------------------------------------------------------
 
 

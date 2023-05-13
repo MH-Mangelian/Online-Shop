@@ -13,10 +13,10 @@ import { basePath } from '../../../next.config';
 
 const Product = () => {
   const addressImg = new Map([
-    ["Classic Head Phone" , Img1],
-    ["Nice Head Phone" , Img2],
-    ["Good Head Phone" , Img3],
-    ["Gaming Head Phone" , Img4],
+    ["Classic Head Phone" , Img1 ],
+    ["Nice Head Phone" , Img2 ],
+    ["Good Head Phone" , Img3 ],
+    ["Gaming Head Phone" , Img4 ],
   ])
   const values = Array.from(addressImg.values());
   const keys = Array.from(addressImg.keys());
@@ -62,8 +62,9 @@ const Product = () => {
           border-radius: 20px;
           border: solid 2px hsl(120, 58%, 29%);
           `} 
-          href=""
+          href={`/product/${values.product}`}
           >
+            {console.log(addressImg)}
 
             <Image key={e} src={e} alt="Product Img"
               width={300}
