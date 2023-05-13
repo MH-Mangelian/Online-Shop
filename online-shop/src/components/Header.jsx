@@ -206,6 +206,7 @@ const Header = () => {
                   left: 0;
                   right: 0;
                   top: 150px;
+                  z-index: 5;
                   
               `}>
                 <SearchForMobile/>
