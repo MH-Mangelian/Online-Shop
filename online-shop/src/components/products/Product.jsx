@@ -12,14 +12,30 @@ import Img4 from '../../public/04.jpg'
 import { basePath } from '../../../next.config';
 
 const Product = () => {
-  const addressImg = new Map([
-    ["Classic Head Phone" , Img1 ],
-    ["Nice Head Phone" , Img2 ],
-    ["Good Head Phone" , Img3 ],
-    ["Gaming Head Phone" , Img4 ],
-  ])
-  const values = Array.from(addressImg.values());
-  const keys = Array.from(addressImg.keys());
+
+  const dataImg = [
+    {
+      id: "1",
+      text: "Classic Head Phone",
+      img: Img1,
+    },
+    {
+      id: "2",
+      text: "Nice Head Phone",
+      img: Img2,
+    },
+    {
+      id: "3",
+      text: "Good Head Phone",
+      img: Img3,
+    },
+    {
+      id: "4",
+      text: "Gaming Head Phone",
+      img: Img4,
+    },
+  ]
+
   return (
     <section css={css`
       display: flex;
@@ -51,10 +67,9 @@ const Product = () => {
     padding: 10px;
     margin:5px;
     `}>
-
-      
       {
-        values.map((e)=>(
+
+        dataImg.map((e)=>(
           <Link css={css`
           background-color: hsl(0, 0%, 93%);
           padding: 10px;
@@ -62,32 +77,30 @@ const Product = () => {
           border-radius: 20px;
           border: solid 2px hsl(120, 58%, 29%);
           `} 
-          href={`/product/${values.product}`}
+          href={`/product/${e.id}`}
           >
-            {console.log(addressImg)}
+            {console.log(dataImg)}
 
-            <Image key={e} src={e} alt="Product Img"
+            <Image key={e} src={e.img} alt="Product Img"
               width={300}
               height={300}
               />
             <div>
-              {
-                
-                keys.map((i)=>(
-                  <p key={e} css={css`
-                  color: black;
-                  font-size: 18px;
-                  padding: 10px;
-                  justify-content: center;
-                  font-weight: bold;
-                  `}>
-                    {i}
-                  </p>
-                  
-                ))
-              }
               
-              <button css={css`
+            <p key={e.id} css={css`
+                    color: black;
+                    font-size: 18px;
+                    padding: 10px;
+                    justify-content: center;
+                    font-weight: bold;
+                  `}>
+                {e.text}
+            </p>
+                
+                
+                  
+                  
+            <button css={css`
                 background:hsl(120, 58%, 29%);
                 color:white;
                 border-radius: 30px;
@@ -103,9 +116,7 @@ const Product = () => {
                 
             `}>Buy Now</button>
               
-            </div>
-
-                
+            </div>      
           </Link>
         ))
       }
