@@ -11,30 +11,30 @@ import Img3 from '../../public/03.jpg'
 import Img4 from '../../public/04.jpg'
 import { basePath } from '../../../next.config';
 
-const Product = () => {
+export const dataImg = [
+  {
+    id: "1",
+    text: "Classic Head Phone",
+    img: Img1,
+  },
+  {
+    id: "2",
+    text: "Nice Head Phone",
+    img: Img2,
+  },
+  {
+    id: "3",
+    text: "Good Head Phone",
+    img: Img3,
+  },
+  {
+    id: "4",
+    text: "Gaming Head Phone",
+    img: Img4,
+  },
+]
 
-  const dataImg = [
-    {
-      id: "1",
-      text: "Classic Head Phone",
-      img: Img1,
-    },
-    {
-      id: "2",
-      text: "Nice Head Phone",
-      img: Img2,
-    },
-    {
-      id: "3",
-      text: "Good Head Phone",
-      img: Img3,
-    },
-    {
-      id: "4",
-      text: "Gaming Head Phone",
-      img: Img4,
-    },
-  ]
+const Product = () => {
 
   return (
     <section css={css`
@@ -77,10 +77,10 @@ const Product = () => {
           border-radius: 20px;
           border: solid 2px hsl(120, 58%, 29%);
           `} 
-          href={`/product/${e.id}`}
+          href={`/something-else?uri=${e.id}`}
+          as={`/products/${e.id}`}
           >
-            {console.log(dataImg)}
-
+            
             <Image key={e} src={e.img} alt="Product Img"
               width={300}
               height={300}
@@ -114,7 +114,7 @@ const Product = () => {
                   background: darkred;
                 }
                 
-            `}>Buy Now</button>
+            `}>Add to Cart</button>
               
             </div>      
           </Link>
