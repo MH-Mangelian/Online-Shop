@@ -19,21 +19,21 @@ const Product = () => {
     ["Gaming Head Phone" , Img4],
   ])
   const values = Array.from(addressImg.values());
-  const keys = Object.keys(addressImg.keys());
+  const keys = Array.from(addressImg.keys());
   return (
     <section css={css`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin-top: 30px;
-    margin-left : auto;
-    margin-right: auto;
-    width: 95vw;
-    padding: 20px 5px;
-    border-radius: 20px;
-    border: solid 1px orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      margin-top: 30px;
+      margin-left : auto;
+      margin-right: auto;
+      width: 95vw;
+      padding: 20px 5px;
+      border-radius: 20px;
+      border: solid 1px orange;
   `}>
 
     <h3 css={css`
@@ -42,7 +42,7 @@ const Product = () => {
     font-weight:bold;
 
     `}>
-       Some Product
+       Product Some
     </h3>
 
     <div css={css`
@@ -71,20 +71,27 @@ const Product = () => {
               />
             <div>
               {
+                
                 keys.map((i)=>(
-                  <p key={i} css={css`
-                  font-size: 16px;
+                  <p key={e} css={css`
+                  color: black;
+                  font-size: 18px;
+                  padding: 10px;
+                  justify-content: center;
+                  font-weight: bold;
                   `}>
                     {i}
                   </p>
+                  
                 ))
               }
-
+              
               <button css={css`
                 background:hsl(120, 58%, 29%);
                 color:white;
                 border-radius: 30px;
                 padding: 13px;
+                width: 300px;
                 border: none;
                 margin: 8px;
                 cursor: pointer;
