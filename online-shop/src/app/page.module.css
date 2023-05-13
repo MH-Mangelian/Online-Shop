@@ -239,5 +239,9 @@
   display: flex;
   position: relative;
   z-index: -3;
-
+  cursor: pointer;
+  background: red;
+  transition: all 0.3s;
+  border-radius: 20px;
+  border: solid 1px black;
 }

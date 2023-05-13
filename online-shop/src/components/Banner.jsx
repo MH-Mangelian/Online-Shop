@@ -58,8 +58,10 @@ const Banner = () => {
               padding: 13px;
               border: none;
               margin: 8px;
+              cursor: pointer;
+              transition: all 0.3s;
               &:hover{
-                color: darkred;
+                background: darkred;
               }
               @media (max-width: 768px) {
                 border-radius: 5px;
