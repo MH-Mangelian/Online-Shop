@@ -5,6 +5,7 @@ import { css ,jsx} from '@emotion/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useState , useEffect } from 'react';
 
 //Global style body Html 
 import '../../app/globals.css';
@@ -16,15 +17,25 @@ import Head from 'next/head';
 import { dataImg } from '@/components/products/Product';
 
 
+export async function getStaticPaths() {
+  const paths = dataImg.map((product) => ({
+    params: { productId: product.id.toString() },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const { productId } = params;
+  const product = dataImg.find((product) => product.id === productId);
+
+  return { props: { product } };
+}
 
 
-const ProductId = () => {
+const ProductId = ({product}) => {
   const router = useRouter();
   const { productId } = router.query;
-
-  //data rendering
-  const objectToFind = dataImg.find(e => e.id === productId );
-  const data = [objectToFind];
 
   return (
     <div>
@@ -46,7 +57,7 @@ const ProductId = () => {
         width: 95vw;
         padding: 20px 5px;
         border-radius: 20px;
-        border: solid 1px orange;
+        background-color: hsl(0, 0%, 93%);
       `}>
 
         <div css={css`
@@ -55,29 +66,25 @@ const ProductId = () => {
           font-weight:bold;
 
         `}>
-             {/* {
-              data.map((e)=>(
-                <h3 key={e.id}>{e.text}</h3>
-              ))
-             } */}
+              
+            <h3>{product.text}</h3>
+              
              {
-              console.log(data)
+              console.log(product)
              }
              
         </div>
 
         <div css={css`
-          display:flex
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
           align-items: center;
           justify-content: center;
-          align-content: center;
-          flex-wrap: nowrap;
+          
           @media (max-width: 640px) {
-            height: 100vh;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
+            flex-wrap: wrap;
+            
           }
         `}>
           {/* -------------------left side --------------- */}
@@ -86,12 +93,24 @@ const ProductId = () => {
           `}>
             {/* -----------big img----------- */}
             <div>
-              {/* {
-                data.map((e)=>(
-                  <Image key={e.id} src={e.img} alt='img'
-                  width={400} height={600}/>
-                ))
-              } */}
+                  <Image src={product.img} alt='img'
+                  width={400} height={600} css={css`
+                  margin: 10px;
+                  @media (max-width: 1024px) {
+                    width:400px ;
+                    height:400px;
+    
+                  }
+                  @media (max-width: 768px) {
+                    width:310px ;
+                    height:310px;
+    
+                  }
+                  @media (max-width: 640px) {
+                    width:350px ;
+                    height:350px;
+    
+                  }`}/>
             </div>
 
             {/* -------------------small imgs----------- */}
@@ -107,37 +126,65 @@ const ProductId = () => {
             display:flex
           `}>
             <div>
-              {/* {
-                data.map((e)=>(
-                  <p key={e.id}
+                  <p 
                   css={css`
                     color:black;
                     font-size: 18px;
                     padding: 10px;
+                    @media (max-width: 833px) {
+                      font-size: 14px;
+                      margin: 0 15px;
+      
+                    }
                   `}
                   >
-                    {e.description}
+                    {product.description}
                   </p>
-                ))
-              } */}
 
-              <button css={css`
-                background:hsl(120, 58%, 29%);
-                color:white;
-                border-radius: 30px;
-                padding: 13px;
-                width: 300px;
-                border: none;
-                margin: 8px;
-                cursor: pointer;
-                transition: all 0.3s;
-                &:hover{
-                  background: darkred;
-                }
-                
+              <div css={css`
+                display:inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                padding: 0 1px;
               `}>
-                Add to Cart
-              </button>
+                <button css={css`
+                  background:hsl(120, 58%, 29%);
+                  color:white;
+                  border-radius: 30px;
+                  padding: 13px;
+                  width: 300px;
+                  border: none;
+                  margin: 8px;
+                  cursor: pointer;
+                  transition: all 0.3s;
+                  &:hover{
+                    background: darkred;
+                  }
+                  @media (max-width: 640px) {
+                    padding: 10px;
+                    width: 150px;
+    
+                  }@media (max-width: 833px) {
+                    width: 150px;
+    
+                  }
+                  
+                `}>
+                  Add to Cart
+                </button>
+
+                <p css={css`
+                      color: black;
+                      font-size: 18px;
+                      padding: 10px;
+                      justify-content: center;
+                      font-weight: bold;
+                    `}>
+                  {product.price}
+              </p>
+
+              </div>
 
             </div>
 
@@ -151,3 +198,6 @@ const ProductId = () => {
 }
 
 export default ProductId
+
+
+
