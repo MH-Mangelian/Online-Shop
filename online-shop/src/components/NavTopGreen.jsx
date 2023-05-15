@@ -4,7 +4,7 @@
 import { css ,jsx} from '@emotion/react';
  
 //import Icons
-import {BsTelephone ,BsShop} from 'react-icons/bs'
+import {BsTelephone ,BsShop} from 'react-icons/bs';
 
 const NavTopGreen = () => {
   return (

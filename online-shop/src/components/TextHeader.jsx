@@ -32,19 +32,19 @@ const TextHeader = () => {
       </select>
     </div>
 
-      <Link href="" css={css`
+      <Link href="/" css={css`
       margin: 0 15px;
       `}>
         Home
       </Link>
 
-      <Link href="" css={css`
+      <Link href="/about" css={css`
       margin: 0 15px;
       `}>
         AboutUs
       </Link>
 
-      <Link href="" css={css`
+      <Link href="/contact" css={css`
       margin: 0 15px;
       `}>
         ContactUs</Link>

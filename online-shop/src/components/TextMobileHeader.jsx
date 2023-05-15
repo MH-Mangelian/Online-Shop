@@ -38,19 +38,19 @@ const TextMobileHeader = () => {
       </select>
     </div>
 
-      <Link href="" css={css`
+      <Link href="/" css={css`
       margin: 15px 0;
       `}>
         Home
       </Link>
 
-      <Link href="" css={css`
+      <Link href="/about" css={css`
       margin: 15px 0;
       `}>
         AboutUs
       </Link>
 
-      <Link href="" css={css`
+      <Link href="/contact" css={css`
       margin: 15px 0;
       `}>
         ContactUs</Link>
