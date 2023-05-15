@@ -122,7 +122,7 @@ const Product = () => {
                 }
                 
             `}>Add to Cart</button>
-              <p key={e.id} css={css`
+              <p key={e.price} css={css`
                     color: black;
                     font-size: 18px;
                     padding: 10px;

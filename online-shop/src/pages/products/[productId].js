@@ -67,11 +67,8 @@ const ProductId = ({product}) => {
 
         `}>
               
-            <h3>{product.text}</h3>
-              
-             {
-              console.log(product)
-             }
+          <h3>{product.text}</h3>
+        
              
         </div>
 
