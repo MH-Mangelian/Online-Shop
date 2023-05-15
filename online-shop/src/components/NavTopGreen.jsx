@@ -38,7 +38,7 @@ const NavTopGreen = () => {
           cursor: pointer;
           `}>
             <BsTelephone/><p css={css`
-            padding: 0.5px 0px 0px 5px ;`}>+989050691900</p>
+            padding: 0.5px 0px 0px 5px ;`}>+989050000000</p>
           </div>
         </div>
         {/* ---------------------------center side -------------------- */}

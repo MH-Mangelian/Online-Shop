@@ -174,7 +174,7 @@ const contact = () => {
               <BsTelephone css={css`
               margin: 0 5px;
               `}/>
-              +989055005000
+              +989050000000
             </p>
 
             <p css={css`
