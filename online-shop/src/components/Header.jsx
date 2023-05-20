@@ -124,31 +124,54 @@ const Header = () => {
                 padding-right: 3px;`
               }>
                 
-                <div css={css`
-                display:inline-flex;
-                margin: 0 10px;
-                padding:0 1px`}>
-                  <MdSupervisorAccount css={css`
-                    width: 20px;
-                    height: 20px;`}/>
-
-                  <Link href="" css={css`
+                <Link href="" css={css`
                   margin: 0 10px;
-                  `}>account</Link>
-                </div>
-
-                <div css={css`
-                display:inline-flex;
-                margin: 0 10px;
-                padding:0 1px`}>
-                  <BiCartAdd css={css`
-                    width: 20px;
-                    height: 20px;`}/>
-
-                  <Link href="" css={css`
+                  `}>
+                  <div css={css`
+                  display:inline-flex;
+                  justify-content:center;
+                  align-items:center;
                   margin: 0 10px;
-                  `}>Cart</Link>
-                </div>
+                  padding:0 1px`}>
+                    <MdSupervisorAccount css={css`
+                      width: 20px;
+                      height: 20px;`}/>
+
+                    <p css={css`
+                      display:inline-flex;
+                      padding: 5px;
+                    `}>
+                      account
+                    </p>
+                  </div>
+
+                </Link>
+
+                <Link href="/cart" css={css`
+                  margin: 0px 20px;
+                  `}>
+                  <div css={css`
+                  display:inline-flex;
+                  justify-content:center;
+                  align-items:center;
+                  margin: 0 10px;
+                  padding:0 1px`}>
+                    
+                      <BiCartAdd css={css`
+                      width: 20px;
+                      height: 20px;
+                      `}/>
+                      <p css={css`
+                        display:inline-flex;
+                        padding: 5px;
+                      `}>
+                        Cart
+                      </p> 
+                      
+                  </div>
+
+
+                </Link>
 
               </div>
             </div>

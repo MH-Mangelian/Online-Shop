@@ -9,8 +9,8 @@ import Image from 'next/image';
 import '../app/globals.css';
 
 //components
-import NavTopGreen from '@/components/NavTopGreen'
-import Header from '@/components/Header'
+import NavTopGreen from '@/components/NavTopGreen';
+import Header from '@/components/Header';
 
 //icons
 import {BsInstagram ,BsTwitter ,BsFacebook , BsTelephone} from 'react-icons/bs';

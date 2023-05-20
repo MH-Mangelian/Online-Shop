@@ -55,7 +55,7 @@ const TextMobileHeader = () => {
       `}>
         ContactUs</Link>
 
-        <Link href="" css={css`
+        <Link href="/cart" css={css`
           margin: 15px 0;
           display: flex;
           align-items: center;;

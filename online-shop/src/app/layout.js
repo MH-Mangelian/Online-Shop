@@ -1,5 +1,9 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import './globals.css';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from '../redux/rootReducer';
+
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -8,10 +12,17 @@ export const metadata = {
   description: '',
 }
 
+
+const store = configureStore({
+  reducer: rootReducer
+});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <Provider store={store}>
+      <html lang="en">
+        <body className={inter.className}>{children}</body>
+      </html>
+    </Provider>
   )
 }
