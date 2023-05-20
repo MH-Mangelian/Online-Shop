@@ -9,8 +9,8 @@ import Image from 'next/image';
 import '../app/globals.css';
 
 //components
-import NavTopGreen from '@/components/NavTopGreen'
-import Header from '@/components/Header'
+import NavTopGreen from '@/components/NavTopGreen';
+import Header from '@/components/Header';
 
 //icons & img 
 import aboutImg from '../public/about.jpg';
