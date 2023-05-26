@@ -19,10 +19,10 @@ const store = configureStore({
 
 export default function RootLayout({ children }) {
   return (
-    <Provider store={store}>
+    
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}><Provider store={store}>{children}</Provider></body>
       </html>
-    </Provider>
+    
   )
 }
