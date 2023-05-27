@@ -1,3 +1,4 @@
+'use client';
 const initialState = {
   user: null,
   isLoggedIn: false,
