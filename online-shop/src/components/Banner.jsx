@@ -4,7 +4,7 @@
 import { css ,jsx} from '@emotion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import bannerImg from '../public/banner.jpg'
+import bannerImg from '../public/banner.png'
 
 const Banner = () => {
   return (
