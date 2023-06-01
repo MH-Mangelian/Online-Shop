@@ -1,14 +1,13 @@
 'use client';
 
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-
+import { store } from './store';
 
 export function Providers({children}){
-  return (
-    <Provider>
-      {children}
-    </Provider>
-  )
+  // return (
+  //   <Provider store={store}>
+  //     {children}
+  //   </Provider>
+  // )
 }
 
