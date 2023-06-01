@@ -4,7 +4,6 @@
 import { css ,jsx} from '@emotion/react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { addToCart } from '../redux/actions/cartActions';
 
 //Global style body Html 
 import '../app/globals.css';
@@ -12,8 +11,7 @@ import '../app/globals.css';
 //components
 import NavTopGreen from '@/components/NavTopGreen';
 import Header from '@/components/Header';
-import Product from '@/components/products/Product';
-import { dataImg } from '@/components/products/Product';
+
 import CartItem from '@/components/CartItem';
 
 
