@@ -14,11 +14,11 @@ import '../../app/globals.css';
 import NavTopGreen from '@/components/NavTopGreen';
 import Header from '@/components/Header';
 import Head from 'next/head';
-import { dataImg } from '@/components/products/Product';
+import DataProduct  from '@/Api/DataProduct';
 
 
 export async function getStaticPaths() {
-  const paths = dataImg.map((product) => ({
+  const paths = DataProduct.map((product) => ({
     params: { productId: product.id.toString() },
   }));
 
@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { productId } = params;
-  const product = dataImg.find((product) => product.id === productId);
+  const product = DataProduct.find((product) => product.id === productId);
 
   return { props: { product } };
 }
