@@ -42,18 +42,18 @@ const cartSlice = createSlice({
         state.total = total;
     }
   },
-  extraReducers : {
-    [getCartItems.pending]:(state)=>{
-        state.isLoading = true;
-    },
-    [getCartItems.fulfilled]:(state,action)=>{
-        state.isLoading = false;
-        state.cartItems = action.payload;
-    },
-    [getCartItems.rejected]:(state)=>{
-        state.isLoading = false;
-    },
-}
+  // extraReducers : {
+  //   [getCartItems.pending]:(state)=>{
+  //       state.isLoading = true;
+  //   },
+  //   [getCartItems.fulfilled]:(state,action)=>{
+  //       state.isLoading = false;
+  //       state.cartItems = action.payload;
+  //   },
+  //   [getCartItems.rejected]:(state)=>{
+  //       state.isLoading = false;
+  //   },
+  // }
 
 });
 

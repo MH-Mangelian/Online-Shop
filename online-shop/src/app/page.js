@@ -7,20 +7,13 @@ import Product from '@/components/products/Product'
 //Global style body Html 
 import '../app/globals.css';
 
-//Redux
-import { Provider } from 'react-redux';
-import { store } from '@/redux/store';
-
-
 export default function Home() {
   return (
-    <Provider store={store}>
       <main className="">
         <NavTopGreen/>
         <Header/>
         <Banner/>
         <Product/>
-      </main>
-    </Provider>
+      </main>    
   )
 }
