@@ -62,7 +62,7 @@ const Banner = () => {
               border-radius: 30px;
               padding: 13px;
               border: none;
-              margin: 10px;
+              margin: 8px;
               cursor: pointer;
               transition: all 0.3s;
               &:hover{
