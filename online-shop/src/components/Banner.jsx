@@ -22,16 +22,21 @@ const Banner = () => {
     `}>
 
       <div className='hi' css={css`
-      display: inline-flex;
-      justify-content: flex-start;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+
       `}>
 
         <div css={css`
           width: 35%;
           z-index: 1;
-          margin-right: -190px;
+          margin-right: -10px;
           @media (max-width: 640px) {
-            margin-right: -334px;
+            margin-right: -30px;
               
           }
           
@@ -76,7 +81,7 @@ const Banner = () => {
         <div css={css`
           width: 65%;
           z-index: -3;
-          margin-left: -190px;
+          margin-left: 1px;
           
         `}>
           <Image src={bannerImg}
@@ -86,6 +91,12 @@ const Banner = () => {
             height={500}
             css={css`
             object-fit: cover;
+            @media (max-width: 768px) {
+              width: 50vw;
+              height: 50vh;
+              padding-left:60px;
+
+            }
             
             `}
           />

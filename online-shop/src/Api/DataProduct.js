@@ -1,5 +1,7 @@
 'use client';
 
+//mockapi.io is not accessible in Iran, a fake API created
+
 import Img1 from '../public/01.jpg'
 import Img2 from '../public/02.jpg'
 import Img3 from '../public/03.jpg'
