@@ -16,7 +16,8 @@
   },
   "plugins": [
     "react",
-    "prettier"
+    "prettier",
+    "jest"
   ],
   "rules": {
     "react/jsx-indent": [1, 4],

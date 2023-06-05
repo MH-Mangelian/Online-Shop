@@ -3,5 +3,10 @@
     "paths": {
       "@/*": ["./src/*"]
     }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   }
 }
