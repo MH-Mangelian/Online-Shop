@@ -124,7 +124,7 @@ const Header = () => {
                 padding-right: 3px;`
               }>
                 
-                <Link href="" css={css`
+                <Link href="/login" css={css`
                   margin: 0 10px;
                   `}>
                   <div css={css`
@@ -141,7 +141,7 @@ const Header = () => {
                       display:inline-flex;
                       padding: 5px;
                     `}>
-                      account
+                      Login
                     </p>
                   </div>
 
