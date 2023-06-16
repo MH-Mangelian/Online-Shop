@@ -19,7 +19,7 @@ const TextMobileHeader = () => {
     align-items: center;
     `}>
 
-      <div css={css`
+      {/* <div css={css`
        width:100px;`}>
 
         <select name="Categories" id="1" css={css`
@@ -36,7 +36,7 @@ const TextMobileHeader = () => {
         <option value="4">3</option>
         <option value="5">4</option>
       </select>
-    </div>
+    </div> */}
 
       <Link href="/" css={css`
       margin: 15px 0;
@@ -48,6 +48,12 @@ const TextMobileHeader = () => {
       margin: 15px 0;
       `}>
         AboutUs
+      </Link>
+
+      <Link href="/news" css={css`
+      margin: 15px 0;
+      `}>
+        News
       </Link>
 
       <Link href="/contact" css={css`
