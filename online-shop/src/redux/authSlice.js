@@ -1,6 +1,6 @@
 'use client';
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { loginAPI, signupAPI } from "../api/authAPI";
+import { loginAPI, signupAPI } from "@/Api/authAPI";
 
 
 export const loginStart = createAsyncThunk(

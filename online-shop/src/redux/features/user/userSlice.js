@@ -28,7 +28,7 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.error = null;
     },
-    // دیگر اکشن‌ها مربوط به ثبت نام و مدیریت کاربران
+    
   },
 });
 
@@ -37,7 +37,7 @@ export const {
   loginSuccess,
   loginFailure,
   logout,
-  // اکشن‌های مربوط به ثبت نام و مدیریت کاربران
+  
 } = authSlice.actions;
 
 export default authSlice.reducer;
