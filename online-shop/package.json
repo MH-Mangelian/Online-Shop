@@ -12,11 +12,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.15",
     "@apollo/server": "^4.7.3",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/react": "^14.0.0",
+    "apollo-server-micro": "^3.12.0",
     "axios": "^1.4.0",
     "axios-mock-adapter": "^1.21.4",
     "emotion": "^11.0.0",

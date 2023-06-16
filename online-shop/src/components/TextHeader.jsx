@@ -14,7 +14,7 @@ const TextHeader = () => {
       
     }`}>
 
-      <div css={css`
+      {/* <div css={css`
        width:100px;`}>
 
         <select name="Categories" id="1" css={css`
@@ -30,7 +30,7 @@ const TextHeader = () => {
         <option value="4">3</option>
         <option value="5">4</option>
       </select>
-    </div>
+    </div> */}
 
       <Link href="/" css={css`
       margin: 0 15px;
@@ -44,10 +44,18 @@ const TextHeader = () => {
         AboutUs
       </Link>
 
-      <Link href="/contact" css={css`
+
+      <Link href="/news" css={css`
       margin: 0 15px;
       `}>
-        ContactUs</Link>
+        News
+      </Link>
+
+      <Link href="/contact" css={css`
+        margin: 0 15px;
+        `}>
+          ContactUs
+      </Link>
     </div>
   )
 }
